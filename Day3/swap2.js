@@ -1,9 +1,10 @@
 // deleteElemets by swapping
 
 let array = [1, 4, 6, 7, 9];
-let num = 6;
+let num = 9;
 
-console.log(deleteEle(array, num))
+console.log(deleteEle(array, num));
+
 function deleteEle(arr, target) {
     let i = 0;
     let n = arr.length;
@@ -11,11 +12,8 @@ function deleteEle(arr, target) {
         if (target == arr[i]) {
             break;
         }
-
     };
-    if (i == n) 
-        return n;
-    for (let j = i; j < n - 1; j++) {
+    for (let j = i; j < n; j++) {
         arr[j] = 2;
         break
     }
