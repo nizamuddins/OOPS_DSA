@@ -139,7 +139,7 @@ var generate = function(numRows) {
                 r = [];
                 n++;
             }else{
-                for(let j=0; j<i-n; j++){
+                for(let j=0; j<3+n; j++){
                     if(j == 0){
                         r.push(m[i][j]);
                     }else{
