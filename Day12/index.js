@@ -19,34 +19,46 @@ n1.next = n2;
 n2.next = n3;
 n3.next = n4;
 n4.next = n5;
+console.log(n1)
 
-// let i = 2;
-// function length(i){
-//     let head = n1;
-//     for(let j = 1;j<=i;j++ ) {
-//         if(head != null){
-//             head = head.next;
-//         }else{
-//             return head
-//         }
-//     }
-//     return head
-// }
+// finding linllistlength
 
-// console.log(length(i));
+let i = 2;
+function length(i){
+    let head = n1;
+    for(let j = 1;j<=i;j++ ) {
+        if(head != null){
+            head = head.next;
+        }else{
+            return head
+        }
+    }
+    return head
+}
+
+console.log(length(i));
 
 
 // deleteing a Node
-let k = 3;
-function length(k){
+let k = 0;
+function deleteNode(k){
     let head = n1;
-    for(let j = 0;j<=k;j++ ) {
-        if(head.next != null && head.next.next != null && j == k && j>0){
+    for(let j = 1;j<=k;j++ ) {
+        if(head.next != null && head.next.next != null && j == k){
             head.next = head.next.next;
-        }else{
-            head.next = null
+            return head;
+        }else if(head.next != null  && j == k){
+            head.next = null;
+            return head;
+        }else if(head.next == null && j == k){
+            return head;
         }
+        head = head.next;
+    }
+    if(k === 0){
+        head.next = null;
+        return head
     }
 }
-length(k)
-console.log(n4)
+console.log(deleteNode(k))
+
