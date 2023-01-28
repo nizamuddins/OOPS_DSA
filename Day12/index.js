@@ -99,24 +99,57 @@ n8.next = n9;
 // }
 // console.log(deleteNode(k))
 
-var isValid = function(s) {
-    let stack = [];
-   for(let i =0;i<s.length;i++){
-       if(s[i] == ")" || s[i] == "}" || s[i] == "]"){
-           stack.push(s[i])
-       }
-   }
-   for(let j = 0;j<s.length;j++){
-       if(s[j] == "(" && stack.pop() !== ")"){
-           return false
-       }else if(s[j] == "[" && stack.pop() !== "]"){
-           return false
-       }else if(s[j] == "{" && stack.pop() !== "}"){
-           return false
-       }
-   }
+// var isValid = function(s) {
+//     let stack = [];
+//    for(let i =0;i<s.length;i++){
+//        if(s[i] == ")" || s[i] == "}" || s[i] == "]"){
+//            stack.push(s[i])
+//        }
+//    }
+//    for(let j = 0;j<s.length;j++){
+//        if(s[j] == "(" && stack.pop() !== ")"){
+//            return false
+//        }else if(s[j] == "[" && stack.pop() !== "]"){
+//            return false
+//        }else if(s[j] == "{" && stack.pop() !== "}"){
+//            return false
+//        }
+//    }
    
-   return true
-};
+//    return true
+// };
 
-console.log(isValid("(()"))
+// console.log(isValid("(()"))
+
+var longestPalindrome = function(s) {
+let string = [];
+let len = 0;
+    function check(x){
+        for(let i = 0;i<x.length;i++){
+            for(let j = x.length-1-i;j>=0;j--){
+                if(x[i] != x[j]){
+                    return null;
+                }
+                break;
+            }
+        }
+        if(string.length == 0){
+            string.push(x);
+            len = x.length;
+        }else if(x.length >len){
+            string.pop()
+            string.push(x);
+            len = x.length;
+        }
+
+    }
+    for(let i =0;i<s.length;i++){
+        let s2 = s[i]
+        for(let j =i+1;j<s.length;j++){
+            s2 += s[j]
+            check(s2)
+        }
+    }
+    return string.join("")
+};
+console.log(longestPalindrome("babad"))
