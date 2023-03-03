@@ -15,6 +15,7 @@ function SelectionSort(arr){
         let temp = arr[i];
         arr[i] = arr[min_ind];
         arr[min_ind] = temp;
+        console.log(arr)
         i++
     }
 return arr
