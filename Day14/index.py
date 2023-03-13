@@ -4,7 +4,6 @@ class Solution:
         set = {nums[0]};
         for i in range(1,len(nums)):
             set.add(nums[i]);
-        print(set)    
         for i in range(0,(len(nums)+1)):
             if (i in set) == False:
                 return i
