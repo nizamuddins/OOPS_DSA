@@ -1,55 +1,55 @@
-// // // First Occurence
+// // First Occurence
 
-// let nums = [
-//     5,
-//     7,
-//     7,
-//     8,
-//     8,
-//     10
-// ];
-// let target = 6;
-// var searchRange = function (nums, target) {
-//     let result = [];
-//     let l = 0;
-//     let r = nums.length - 1;
-//     FirstOcc(nums, target, l, r)
-//     function FirstOcc(nums, target, l, r) {
-//         while (l <= r) {
-//             let mid = Math.floor((l + r) / 2);
-//             if (target == nums[mid]) {
-//                 result[0] = mid;
-//                 r = mid - 1
-//             } else if (target > nums[mid]) {
-//                 l = mid + 1
-//             } else {
-//                 r = mid - 1
-//             }
-//         }
-//     }
+let nums = [
+    5,
+    7,
+    7,
+    8,
+    8,
+    10
+];
+let target = 7;
+var searchRange = function (nums, target) {
+    let result = [];
+    let l = 0;
+    let r = nums.length - 1;
+    FirstOcc(nums, target, l, r)
+    function FirstOcc(nums, target, l, r) {
+        while (l <= r) {
+            let mid = Math.floor((l + r) / 2);
+            if (target == nums[mid]) {
+                result[0] = mid;
+                console.log(mid)
+                r = mid - 1
+            } else if (target > nums[mid]) {
+                l = mid + 1
+            } else {
+                r = mid - 1
+            }
+        }
+    }
+    LastOcc(nums, target, l, r)
 
-//     LastOcc(nums, target, l, r)
+    function LastOcc(nums, target, l, r) {
 
-//     function LastOcc(nums, target, l, r) {
-
-//         while (l <= r) {
-//             let mid = Math.floor((l + r) / 2);
-//             if (target == nums[mid]) {
-//                 result[1] = mid;
-//                 l = mid + 1
-//             } else if (target > nums[mid]) {
-//                 l = mid + 1
-//             } else {
-//                 r = mid - 1
-//             }
-//         }
-//     }
-//     if(result.length == 0){
-//         return [-1,-1]
-//     }
-//     return result
-// }
-// console.log(searchRange(nums, target))
+        while (l <= r) {
+            let mid = Math.floor((l + r) / 2);
+            if (target == nums[mid]) {
+                result[1] = mid;
+                l = mid + 1
+            } else if (target > nums[mid]) {
+                l = mid + 1
+            } else {
+                r = mid - 1
+            }
+        }
+    }
+    if(result.length == 0){
+        return [-1,-1]
+    }
+    return result
+}
+console.log(searchRange(nums, target))
 // // reverseinteger
 
 // let x2 = 30;
@@ -116,50 +116,50 @@
 
 // console.log(mySqrt(x))
 
-let numRows  = 7;
-var generate = function(numRows) {
-    let m = [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]];
-    let  l = m.length;
-    let r = [];
-    let n = 0;
-    if(numRows>5){
-        for(let i =l-1; i<numRows-1; i++){
-            if(i%2 == 0){
-                for(let j=0; j<3+n; j++){
-                    if(j == 0){
-                        r.push(m[i][j]);
-                    }else{ 
-                        r.push(m[i][j-1]+m[i][j]);
-                    }
-                }
-                for(let k = r.length-1;k >= 0;k--){
-                    r.push(r[k])  
-                };
-                m.push(r);
-                r = [];
-                n++;
-            }else{
-                for(let j=0; j<3+n; j++){
-                    if(j == 0){
-                        r.push(m[i][j]);
-                    }else{
-                        r.push(m[i][j-1]+m[i][j]);
-                    }
-                }
-                for(let k = r.length-2;k >= 0;k--){
-                  r.push(r[k])  
-                };
-                m.push(r);
-                r = [];
-            }
-        }
-    }else{
-        for(let i = 0;i<numRows;i++){
-            r.push(m[i])
-        }
-        return r
-    }
-    return m;
-};
+// let numRows  = 7;
+// var generate = function(numRows) {
+//     let m = [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]];
+//     let  l = m.length;
+//     let r = [];
+//     let n = 0;
+//     if(numRows>5){
+//         for(let i =l-1; i<numRows-1; i++){
+//             if(i%2 == 0){
+//                 for(let j=0; j<3+n; j++){
+//                     if(j == 0){
+//                         r.push(m[i][j]);
+//                     }else{ 
+//                         r.push(m[i][j-1]+m[i][j]);
+//                     }
+//                 }
+//                 for(let k = r.length-1;k >= 0;k--){
+//                     r.push(r[k])  
+//                 };
+//                 m.push(r);
+//                 r = [];
+//                 n++;
+//             }else{
+//                 for(let j=0; j<3+n; j++){
+//                     if(j == 0){
+//                         r.push(m[i][j]);
+//                     }else{
+//                         r.push(m[i][j-1]+m[i][j]);
+//                     }
+//                 }
+//                 for(let k = r.length-2;k >= 0;k--){
+//                   r.push(r[k])  
+//                 };
+//                 m.push(r);
+//                 r = [];
+//             }
+//         }
+//     }else{
+//         for(let i = 0;i<numRows;i++){
+//             r.push(m[i])
+//         }
+//         return r
+//     }
+//     return m;
+// };
 
-console.log(generate(numRows))
+// console.log(generate(numRows))

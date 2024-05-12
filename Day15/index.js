@@ -17,4 +17,4 @@ function twoSum(arr,tar){
         }
     }
 }
-console.log(twoSum(arr,tar))
+console.log(twoSum(arr,tar)) 

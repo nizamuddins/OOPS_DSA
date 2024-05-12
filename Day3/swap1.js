@@ -1,7 +1,7 @@
 // deleteElemets by swapping
 
 let array = [1, 4, 6, 7, 9];
-let num = 7;
+let num = 4;
 
 console.log(deleteEle(array, num))
 function deleteEle(arr, target) {
